@@ -1,0 +1,22 @@
+.filter {
+  float: right;
+  height: 100%;
+  text-align: right;
+  margin-right: 1em;
+}
+
+.filter__select {
+  margin-top: 5px;
+  font-size: 1em;
+  background: #ddd;
+  width: 500px;
+}
+
+@media all and (max-width: 699px) {
+  .filter {
+    margin-right: 0;
+  }
+  .filter__select {
+    width: 230px;
+  }
+}

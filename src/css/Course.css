@@ -1,0 +1,103 @@
+.course {
+  margin: 2em 1em;
+  min-width: 300px;
+}
+
+.course__title,
+.course__title-closed {
+  font-weight: 500;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0.3em 0;
+  hyphens: auto;
+  position: relative;
+}
+
+.course__title a,
+.course__title-closed a {
+  color: black;
+}
+
+.course__title::before,
+.course__title-closed::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+}
+
+@media (pointer: fine) {
+  .course__title-closed::before {
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+
+  .course__title-closed:hover::before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+.course__title__text {
+  display: inline-block;
+  width: 90%;
+}
+
+.course__title__btn {
+  float: right;
+  margin-right: 0.5em;
+}
+
+.course__title__btn i {
+  font-size: 0.8em;
+}
+
+.course__content {
+  font-weight: 300;
+  font-size: 1.3em;
+  overflow: auto;
+  clear: both;
+}
+
+.course__content__teacher {
+  overflow: auto;
+}
+
+/*.course__content__teacher__name {
+
+}*/
+
+.course__content__teacher__contact {
+  position: relative;
+  float: left;
+  clear: both;
+  border-bottom: 1px solid teal;
+  margin: 0.2em 0;
+}
+
+.course__content__teacher__contact a {
+  text-decoration: none;
+  color: teal;
+}
+
+/*.course__content__tasks {
+
+}*/
+
+/*@media all and (max-width: 699px) {
+  .course__title,
+  .course__title-closed {
+    font-size: 1.5em;
+  }
+
+  .course__content {
+    font-size: 1.2em;
+  }
+}*/
