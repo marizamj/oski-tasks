@@ -13,3 +13,27 @@
   text-decoration: none;
   border-bottom: 1px solid teal;
 }
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: limegreen;
+}
+
+.violet {
+  color: violet;
+}
+
+.indigo {
+  color: indigo;
+}
+
+.gray {
+  color: #999999;
+}

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import '../css/Task.css';
-import { findAndParseLinks } from '../lib';
+import { parseColors } from '../lib';
+import marked from 'marked';
 
 class Task extends Component {
   componentDidMount() {
     const { Description } = this.props.task;
-    this.descriptionEl.innerHTML = findAndParseLinks(Description);
+    this.descriptionEl.innerHTML = parseColors(marked(Description));
   }
 
   render() {
