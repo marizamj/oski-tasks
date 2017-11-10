@@ -30,7 +30,7 @@ class Course extends Component {
             />
           </span>
         </div>
-        <Collapse isOpened={open} springConfig={{ damping: 30 }}>
+        <Collapse isOpened={open}>
           <div className="course__content">
             <div className="course__content__teacher">
               <div className="course__content__teacher__name">
