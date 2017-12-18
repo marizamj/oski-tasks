@@ -47,6 +47,12 @@
   width: 90%;
 }
 
+.course__title__subtext {
+  color: grey;
+  font-size: 0.7em;
+  margin-left: 0.5em;
+}
+
 .course__title__btn {
   float: right;
   margin-right: 0.5em;

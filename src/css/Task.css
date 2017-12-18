@@ -1,7 +1,6 @@
 .task {
   margin: 1em 0;
   list-style-type: decimal;
-  width: 90%;
 }
 
 .task__deadline {

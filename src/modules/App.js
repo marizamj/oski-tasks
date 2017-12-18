@@ -63,6 +63,7 @@ class App extends Component {
               open={opened === course.Title.replace(/\s/g, '-').toLowerCase()}
               toggleOpen={this._onToggleOpen}
               title={course.Title}
+              type={course.Type}
               tasks={tasks.filter(task => task.Course === course.Title)}
               teacher={
                 teachers.find(teacher => teacher.Name === course.Teacher) ||

@@ -14,7 +14,7 @@ const contacts = [
 
 class Course extends Component {
   render() {
-    const { id, title, tasks, teacher, open } = this.props;
+    const { id, title, tasks, type, teacher, open } = this.props;
 
     return (
       <div className="course" lang="ru" id={id}>
@@ -22,7 +22,12 @@ class Course extends Component {
           className={open ? 'course__title' : 'course__title-closed'}
           onClick={() => this.props.toggleOpen(open ? '' : this.props.id)}
         >
-          <span className="course__title__text">{title}</span>
+          <span className="course__title__text">
+            {title}
+            <span className="course__title__subtext">
+              {type.toLowerCase() || '?'}
+            </span>
+          </span>
           <span className="course__title__btn">
             <i
               className={!open ? 'fa fa-plus' : 'fa fa-minus'}
