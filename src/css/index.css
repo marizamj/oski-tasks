@@ -5,6 +5,16 @@ body {
   font-family: 'Exo 2', sans-serif;
 }
 
+::selection {
+  background: #b2d8d8;
+}
+
+a {
+  color: teal;
+  text-decoration: none;
+  border-bottom: 1px solid teal;
+}
+
 .header {
   background: black;
   color: white;

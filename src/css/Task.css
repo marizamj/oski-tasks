@@ -8,12 +8,6 @@
   color: #bb0000;
 }
 
-.task__description a {
-  color: teal;
-  text-decoration: none;
-  border-bottom: 1px solid teal;
-}
-
 .red {
   color: red;
 }

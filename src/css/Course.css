@@ -67,10 +67,6 @@
   overflow: auto;
 }
 
-/*.course__content__teacher__name {
-
-}*/
-
 .course__content__teacher__contact {
   position: relative;
   float: left;
@@ -78,23 +74,3 @@
   border-bottom: 1px solid teal;
   margin: 0.2em 0;
 }
-
-.course__content__teacher__contact a {
-  text-decoration: none;
-  color: teal;
-}
-
-/*.course__content__tasks {
-
-}*/
-
-/*@media all and (max-width: 699px) {
-  .course__title,
-  .course__title-closed {
-    font-size: 1.5em;
-  }
-
-  .course__content {
-    font-size: 1.2em;
-  }
-}*/
