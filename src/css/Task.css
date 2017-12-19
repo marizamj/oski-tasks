@@ -3,6 +3,14 @@
   list-style-type: decimal;
 }
 
+.task [comment='true'] {
+  font-size: 0.8em;
+  color: dimgrey;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: -1em;
+}
+
 .task__deadline {
   color: #bb0000;
 }
