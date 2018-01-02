@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import '../css/Task.css';
-import { parseColors } from '../lib';
-import marked from 'marked';
+import { applyFormatting } from '../lib';
 
 class Task extends Component {
   componentDidMount() {
     const { Description } = this.props.task;
-    this.descriptionEl.innerHTML = parseColors(marked(Description));
+    this.descriptionEl.innerHTML = applyFormatting(Description, [
+      'markdown',
+      'colors',
+      'targetBlank'
+    ]);
   }
 
   render() {

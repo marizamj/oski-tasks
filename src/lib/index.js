@@ -1,3 +1,5 @@
+import marked from 'marked';
+
 export const findAndParseLinks = string => {
   const matchedLinks = string.match(/(https?:\/\/.+?\s)|(https?:\/\/.+?$)/gi);
 
@@ -15,8 +17,11 @@ export const findAndParseLinks = string => {
   return newString;
 };
 
-export const parseColors = string => {
-  return string
+export const addTargetBlank = string =>
+  string.replace(/<a href="/gi, '<a target="_blank" href="');
+
+export const parseColors = string =>
+  string
     .replace(/\(color:red\)/gi, '<span class="red">')
     .replace(/\(color:blue\)/gi, '<span class="blue">')
     .replace(/\(color:green\)/gi, '<span class="green">')
@@ -24,6 +29,17 @@ export const parseColors = string => {
     .replace(/\(color:indigo\)/gi, '<span class="indigo">')
     .replace(/\(color:gray\)/gi, '<span class="gray">')
     .replace(/\(color:end\)/gi, '</span>');
-};
 
 export const getIDFromTitle = title => title.replace(/\s/g, '-').toLowerCase();
+
+export const applyFormatting = (_string, types) => {
+  const typesMap = {
+    colors: parseColors,
+    markdown: marked,
+    targetBlank: addTargetBlank
+  };
+
+  let string = _string;
+
+  return types.reduce((acc, type) => typesMap[type](acc), string);
+};
