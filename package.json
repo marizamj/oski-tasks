@@ -16,10 +16,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages --dist build --branch gh-pages"
+    "copy-cname": "cp CNAME build",
+    "deploy":
+      "npm run build && npm run copy-cname && gh-pages --dist build --branch gh-pages"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0"
   },
-  "homepage": "https://marizamj.github.io/oski-tasks"
+  "homepage": "http://oski.online/"
 }
