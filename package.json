@@ -8,17 +8,18 @@
     "react-collapse": "^4.0.3",
     "react-dom": "^16.0.0",
     "react-motion": "^0.5.2",
-    "react-scripts": "1.0.16",
+    "react-scripts": "1.1.0",
     "tabletop": "^1.5.2"
   },
   "scripts": {
+    "postinstall": "npm run hack-node-modules",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "copy-cname": "cp CNAME build",
-    "deploy":
-      "npm run build && npm run copy-cname && gh-pages --dist build --branch gh-pages"
+    "hack-node-modules": "sed -i '' 's/if(inNodeJS)/if(false)/' node_modules/tabletop/src/tabletop.js",
+    "deploy": "npm run build && npm run copy-cname && gh-pages --dist build --branch gh-pages"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0"
