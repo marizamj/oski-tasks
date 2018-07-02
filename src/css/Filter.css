@@ -3,12 +3,12 @@
   height: 100%;
   text-align: right;
   margin-right: 1em;
+  padding: 0.5em;
 }
 
 .filter__select {
   margin-top: 5px;
   font-size: 1em;
-  /*background: #ddd;*/
   width: 500px;
 }
 

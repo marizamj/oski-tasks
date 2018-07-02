@@ -1,0 +1,41 @@
+.header {
+  background: black;
+  color: white;
+  overflow: auto;
+  position: relative;
+  min-width: 500px;
+}
+
+.header__letters {
+  padding: 0.5em;
+  float: left;
+  font-size: 1em;
+  margin: auto;
+}
+
+.header__years {
+  clear: both;
+  width: 100%;
+}
+
+.header__year,
+.header__year-selected {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+  margin-top: 8px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.header__year-selected {
+  color: black;
+  background: white;
+}
+
+.header__year:hover {
+  background-color: dimgrey;
+  cursor: pointer;
+}
