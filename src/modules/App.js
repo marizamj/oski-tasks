@@ -47,7 +47,8 @@ class App extends Component {
       this.setState({
         year,
         courses: this.state.allCourses.filter(c => Number(c.Year) === year),
-        filtered: this.state.allCourses.filter(c => Number(c.Year) === year)
+        filtered: this.state.allCourses.filter(c => Number(c.Year) === year),
+        opened: ''
       });
     }
   };
