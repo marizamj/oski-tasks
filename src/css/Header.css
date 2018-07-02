@@ -3,7 +3,6 @@
   color: white;
   overflow: auto;
   position: relative;
-  min-width: 500px;
 }
 
 .header__letters {
