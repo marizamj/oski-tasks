@@ -10,17 +10,31 @@ const url =
   'https://docs.google.com/spreadsheets/d/1UH7TQzknOEl8BWdSIgfMSopAjVKusStcZ3_J27L6VkE/edit?usp=sharing';
 
 class App extends Component {
-  state = { courses: [], teachers: [], tasks: [], opened: '', filtered: null };
+  state = {
+    courses: [],
+    teachers: [],
+    tasks: [],
+    opened: '',
+    filtered: null,
+    year: 5,
+    loading: true
+  };
 
   componentDidMount() {
     Tabletop.init({
       key: url,
       callback: (data, tabletop) => {
+        const thisYearCourses = data.Courses.elements.filter(
+          c => Number(c.Year) === this.state.year
+        );
+
         this.setState({
-          courses: data.Courses.elements,
-          filtered: data.Courses.elements,
+          allCourses: data.Courses.elements,
+          courses: thisYearCourses,
+          filtered: thisYearCourses,
           teachers: data.Teachers.elements,
-          tasks: data.Tasks.elements
+          tasks: [...data.Tasks4.elements, ...data.Tasks5.elements],
+          loading: false
         });
       }
     });
@@ -28,8 +42,18 @@ class App extends Component {
 
   _onToggleOpen = id => this.setState({ opened: id });
 
+  _onChangeYear = year => {
+    if (!this.state.loading) {
+      this.setState({
+        year,
+        courses: this.state.allCourses.filter(c => Number(c.Year) === year),
+        filtered: this.state.allCourses.filter(c => Number(c.Year) === year)
+      });
+    }
+  };
+
   _onChangeFilter = (type, value) => {
-    const { courses } = this.state;
+    const { courses, year } = this.state;
 
     if (value === 'all') {
       return this.setState({ filtered: courses.concat(), opened: '' });
@@ -46,14 +70,24 @@ class App extends Component {
   };
 
   render() {
-    const { courses, teachers, tasks, opened, filtered } = this.state;
+    const {
+      courses,
+      teachers,
+      tasks,
+      opened,
+      filtered,
+      year,
+      loading
+    } = this.state;
 
     return (
       <div>
         <Header
+          year={year}
           courses={courses}
           teachers={teachers}
           onChangeFilter={this._onChangeFilter}
+          onChangeYear={this._onChangeYear}
         />
         {filtered && filtered.length > 0 ? (
           filtered.map(course => (
@@ -73,8 +107,10 @@ class App extends Component {
           ))
         ) : (
           <div className="loading">
-            <div>loading...</div>
-            <img src={loadingImg} width={300} alt="loading..." />
+            <div>
+              {loading ? 'loading...' : 'ничего нет. куда подевалось?..'}
+            </div>
+            {loading && <img src={loadingImg} width={300} alt="loading..." />}
           </div>
         )}
       </div>
