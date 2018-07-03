@@ -5,6 +5,7 @@ import { getIDFromTitle } from '../lib';
 
 import Header from './Header';
 import Course from './Course';
+import Info from './Info';
 
 const url =
   'https://docs.google.com/spreadsheets/d/1UH7TQzknOEl8BWdSIgfMSopAjVKusStcZ3_J27L6VkE/edit?usp=sharing';
@@ -113,9 +114,13 @@ class App extends Component {
         ) : (
           <div className="loading">
             <div>
-              {loading ? 'loading...' : 'ничего нет. куда подевалось?..'}
+              {loading && year !== 'info' && 'loading...'}
+              {year === 'info' && <Info />}
             </div>
-            {loading && <img src={loadingImg} width={300} alt="loading..." />}
+            {loading &&
+              year !== 'info' && (
+                <img src={loadingImg} width={300} alt="loading..." />
+              )}
           </div>
         )}
       </div>

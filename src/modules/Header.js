@@ -18,7 +18,15 @@ class Header extends Component {
         </div>
         <Filter {...this.props} />
         <div className="header__years">
-          {[1, 2, 3, 4, 5].map(el => (
+          <span
+            className={
+              year === 'info' ? 'header__year-selected' : 'header__year'
+            }
+            onClick={() => onChangeYear('info')}
+          >
+            Полезное
+          </span>
+          {[3, 4, 5].map(el => (
             <span
               key={`${el}-year`}
               className={el === year ? 'header__year-selected' : 'header__year'}

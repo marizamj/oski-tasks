@@ -1,0 +1,18 @@
+.info {
+  text-align: left;
+  padding: 1em;
+  clear: both;
+}
+
+.info__subdiv {
+  margin-left: 1em;
+}
+
+.info a {
+  font-weight: 300;
+  position: relative;
+  float: left;
+  clear: both;
+  border-bottom: 1px solid teal;
+  margin-top: 0.2em;
+}
