@@ -33,7 +33,11 @@ class App extends Component {
           courses: thisYearCourses,
           filtered: thisYearCourses,
           teachers: data.Teachers.elements,
-          tasks: [...data.Tasks4.elements, ...data.Tasks5.elements],
+          tasks: [
+            ...data.Tasks3.elements,
+            ...data.Tasks4.elements,
+            ...data.Tasks5.elements
+          ],
           loading: false
         });
       }
