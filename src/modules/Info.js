@@ -18,6 +18,9 @@ class Info extends Component {
           <div className="info__subdiv">
             <a href="tel:74952506563">74952506563</a>
             <a href="mailto:oski.dekanat@rggu.ru">oski.dekanat@rggu.ru</a>
+            <a target="_blank" href="http://culture.rsuh.ru/">
+              http://culture.rsuh.ru/
+            </a>
           </div>
         </div>
       </div>
