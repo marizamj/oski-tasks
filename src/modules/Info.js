@@ -8,6 +8,7 @@ class Info extends Component {
         <div className="info">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://drive.google.com/open?id=1FGcZ_MD9fQMQBmmR16eOr9R2w9guxflZ"
           >
             Учебный план
@@ -18,8 +19,24 @@ class Info extends Component {
           <div className="info__subdiv">
             <a href="tel:74952506563">74952506563</a>
             <a href="mailto:oski.dekanat@rggu.ru">oski.dekanat@rggu.ru</a>
-            <a target="_blank" href="http://culture.rsuh.ru/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://culture.rsuh.ru/"
+            >
               http://culture.rsuh.ru/
+            </a>
+          </div>
+        </div>
+        <div className="info">
+          Аудиозаписи лекций:
+          <div className="info__subdiv">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/open?id=105UlbPXa3cPrr4_Pu50YtPixSRTEFiCc"
+            >
+              Google Drive
             </a>
           </div>
         </div>
